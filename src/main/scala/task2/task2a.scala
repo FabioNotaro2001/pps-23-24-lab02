@@ -1,6 +1,6 @@
 package task2
 
-object Task2 extends App:
+object Task2a extends App:
     // Punto a.
     // Val assigned to function literal (lambda).
     val positive : Int => String = _ match
@@ -11,14 +11,6 @@ object Task2 extends App:
     def positiveMethod(number: Int) : String = number match
         case p if p >= 0 => "positive"
         case _ => "negative"
-
-    // Punto b.
-    def neg (predicate : String => Boolean) : String => Boolean = 
-        givenString => !predicate(givenString)
-
-    val vuoto = neg(elemento => elemento == "")
-    println(vuoto(""))
-     
     
 
 

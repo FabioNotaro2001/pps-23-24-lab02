@@ -1,10 +1,9 @@
 import org.junit.*
 import org.junit.Assert.*
-import task2.Task2.positive
-import task2.Task2.positiveMethod
+import task2.Task2a.positive
+import task2.Task2a.positiveMethod
 
-class Task2Test:
-    // Punto a.
+class Task2aTest:
     @Test 
     def testpositiveValWithActualPositive(): Unit = {
         assertEquals("positive", positive(10))
