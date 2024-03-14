@@ -2,9 +2,7 @@ package task2
 
 import org.junit.*
 import org.junit.Assert.*
-import task2.Task2a.positive
-import task2.Task2a.positiveMethod
-import task2.Task2b.neg
+import Task2b.neg
 
 class Task2bTest:
     @Test 
