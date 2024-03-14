@@ -4,6 +4,7 @@ import task2.Task2.positive
 import task2.Task2.positiveMethod
 
 class Task2Test:
+    // Punto a.
     @Test 
     def testpositiveValWithActualPositive(): Unit = {
         assertEquals("positive", positive(10))
