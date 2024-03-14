@@ -15,17 +15,22 @@ class Task2eTest:
 
     @Test 
     def testGenericComposeWithInt(): Unit = {
-        assertEquals(9, genericCompose[Int](_-1, _*2)(5))
-        assertEquals(2, genericCompose[Int](_+1, _-1)(2))
+        def double: Int => Int = number => number * 2
+        def increment: Int => Int = number => number + 1
+        assertEquals(12, genericCompose(double(_), increment(_))(5))
     }
 
     @Test 
     def testGenericComposeWithString(): Unit = {
         def concatenate(initialPart: String, finalPart: String): String = initialPart + finalPart
-
-        assertEquals("PrimaPoiInfine", genericCompose[String](concatenate(_, "Infine"), concatenate(_, "Poi"))("Prima"))
+        assertEquals("PrimaPoiInfine", genericCompose(concatenate(_, "Infine"), concatenate(_, "Poi"))("Prima"))
     }
 
-    
+    @Test 
+    def testGenericComposeWithIntAndString(): Unit = {
+        def convertNumberToString: Integer => String = number => "Number: " + number
+        def checkEvenNumberOfChar: String => Boolean = givenString => givenString.length() % 2 == 0
 
-
+        assertTrue(genericCompose(checkEvenNumberOfChar(_), convertNumberToString(_))(10))
+        assertFalse(genericCompose(checkEvenNumberOfChar(_), convertNumberToString(_))(1))
+    }
