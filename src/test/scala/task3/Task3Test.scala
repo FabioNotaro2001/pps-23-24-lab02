@@ -1,10 +1,11 @@
-package task2
+package task3
 
 import org.junit.*
 import org.junit.Assert.*
-import Task2f.gcd
+import Task3.gcd
+import task3.Task3
 
-class Task2fTest:
+class Task3Test:
     @Test 
     def testGCDWithEasyCase(): Unit = {
         assertEquals(10, gcd(100, 30))
